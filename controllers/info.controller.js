@@ -10,7 +10,7 @@ exports.createInfo = async (req, res) => {
             return res.status(400).json({ error: '이름, 전화번호, farm_id는 필수입니다.' });
         }
 
-        const result = await infoService.createInfo({ name, phone, email, farm_id });
+        const result = await infoService.createInfo({ name, phone_number, email, farm_id });
 
         res.status(201).json({ message: '저장 성공', data: result });
     } catch (error) {
