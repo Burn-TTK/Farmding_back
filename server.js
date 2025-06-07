@@ -1,4 +1,4 @@
-const app = require('./app'); // 또는 './src/app' 경로에 맞게
+const app = require('./app'); // 필요에 따라 './src/app'일 수도 있음
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,4 +1,4 @@
-const infoService = require('../services/info.service'); // ✅ 추가
+const infoService = require('../services/info.service'); // ✅ 반드시 필요
 
 exports.createInfo = async (req, res) => {
     try {
