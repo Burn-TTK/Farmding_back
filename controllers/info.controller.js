@@ -1,3 +1,5 @@
+const infoService = require('../services/info.service'); // ✅ 추가
+
 exports.createInfo = async (req, res) => {
     try {
         const { name, phone, email, farm_id } = req.body;
@@ -7,6 +9,7 @@ exports.createInfo = async (req, res) => {
         }
 
         const result = await infoService.createInfo({ name, phone, email, farm_id });
+
         res.status(201).json({ message: '저장 성공', data: result });
     } catch (error) {
         console.error('❌ 서버 오류:', error.message);
