@@ -4,9 +4,9 @@ exports.createInfo = async (req, res) => {
     try {
         console.log('📦 받은 데이터:', req.body); // 요청 데이터 확인
 
-        const { name, phone, email, farm_id } = req.body;
+        const { name, phone_number, email, farm_id } = req.body;
 
-        if (!name || !phone || !farm_id) {
+        if (!name || !phone_number || !farm_id) {
             return res.status(400).json({ error: '이름, 전화번호, farm_id는 필수입니다.' });
         }
 

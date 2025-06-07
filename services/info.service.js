@@ -1,10 +1,10 @@
 const supabase = require('../supabase/client'); // Supabase 연결
 
-exports.createInfo = async ({ name, phone, email, farm_id }) => {
-    const { data, error } = await supabase.from('farm_info').insert([
+exports.createInfo = async ({ name, phone_number, email, farm_id }) => {
+    const { data, error } = await supabase.from('info').insert([
         {
             name,
-            phone,
+            phone_number,
             email,
             farm_id,
         },
