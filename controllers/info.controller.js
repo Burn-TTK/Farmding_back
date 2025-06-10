@@ -2,7 +2,7 @@ const infoService = require('../services/info.service');
 
 exports.createInfo = async (req, res) => {
     try {
-        console.log('📦 받은 데이터:', req.body); // 요청 데이터 확인
+        console.time('⏱️ Info 저장 처리 시간'); // ⬅️ 시간 측정 시작
 
         const { name, phone_number, email, farm_id } = req.body;
 
@@ -12,9 +12,11 @@ exports.createInfo = async (req, res) => {
 
         const result = await infoService.createInfo({ name, phone_number, email, farm_id });
 
+        console.timeEnd('⏱️ Info 저장 처리 시간'); // ⬅️ 시간 측정 종료 (소요 시간 출력)
+
         res.status(201).json({ message: '저장 성공', data: result });
     } catch (error) {
-        console.error('❌ 서버 오류:', error); // 전체 에러 객체 출력
+        console.error('❌ 서버 오류:', error);
         res.status(500).json({ error: '서버 내부 오류' });
     }
 };
